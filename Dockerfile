@@ -4,6 +4,7 @@ RUN apk --update add \
       bash \
     && rm -rf /var/cache/apk/*
 
-#RUN echo -e "[global]\nindex-url=https://$BINTRAY_USER:$BINTRAY_PASSWORD@driveclutch.bintray.com/clutch-python" > /etc/pip.conf
+ADD python.sh /scripts/
+WORKDIR /app
 
-# testing dockerhub automated build
+ENTRYPOINT ["bash", "/scripts/python.sh"]
