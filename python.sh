@@ -6,5 +6,5 @@ mkdir clutch_python_libs
 
 for lib in "${clutch_lib_names[@]}"
 do
-        pip download --index-url=https://$BINTRAY_USER:$BINTRAY_PASSWORD@driveclutch.bintray.com/clutch-python -d clutch_python_libs $lib
+        pip download --index-url=https://$BINTRAY_USER:$BINTRAY_PASSWORD@driveclutch.bintray.com/clutch-python --no-deps -d clutch_python_libs  $lib
 done
